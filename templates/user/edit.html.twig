@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block header_title %}
+    <div class="header-title align-left">
+        <h1>Utilisateurs</h1>
+        <h2>Modifier un utilisateur existant</h2>
+    </div>
+{% endblock %}
+
+{% block header_img %}{% endblock %}
+
+{% block body %}
+    <div class="row">
+        <div class="user-form">
+            {{ form_start(form, {'action' : path('user_edit', {'id' : user.id})}) }}
+                {{ form_widget(form) }}
+                <a href="{{ path('user_list') }}" class="btn btn-primary"><span class="glyphicon glyphicon-chevron-left"></span>Retour à la liste des utilisateurs</a>
+                <button type="submit" class="btn btn-success pull-right">Modifier l'utilisateur</button>
+            {{ form_end(form) }}
+        </div>
+    </div>
+{% endblock %}

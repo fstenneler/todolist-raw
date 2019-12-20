@@ -1,0 +1,461 @@
+/*!
+ * Start Bootstrap - Shop Homepage (http://startbootstrap.com/)
+ * Copyright 2013-2016 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
+ */
+
+
+/** Main ----- */
+
+body {
+    padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+}
+
+.main-container {
+    margin-top: 10px;
+}
+
+.align-left {
+    text-align: left;
+}
+
+.align-center {
+    text-align: center;
+}
+
+/* ----- Main */
+
+
+/* Header ----- */
+
+.header-title {
+    padding-bottom: 9px;
+    margin: 0 0 30px;
+    border-bottom: 1px solid #eee;
+}
+
+.header-title h1 {
+    font-size: 45px;
+    font-weight: 100;
+    color: #54397E;  
+    margin: 0;  
+}
+
+.header-title h2 {
+    font-size: 15px;
+    color: #6B6B6B;    
+}
+
+.slide-image {
+    border-radius: 4px;
+}
+
+/* ----- Header */
+
+
+/* Forms ----- */
+
+.login-form {
+    max-width: 450px;
+    margin: auto;
+}
+
+.task-form {
+    max-width: 650px;
+    margin: 30px auto 0 auto;
+}
+
+.task-form textarea {
+    height: 120px;
+}
+
+.user-form {
+    max-width: 650px;
+    margin: 0 auto 0 auto;
+}
+
+/* ----- Forms */
+
+
+/* Navigation ----- */
+
+.site-main [class*="navigation"] a,
+.more-link {
+	border: 1px solid #DDD;
+	padding: 6px 12px;
+	border-radius: 4px;
+	display: block;
+}
+.site-main [class*="navigation"] a:hover,
+.more-link:hover {
+  color: #fff;
+  background: #54397E;
+  text-decoration: none;
+}
+.more-link {
+  float: right;
+  margin: 10px 0;
+}
+.site-main [class*="navigation"] {
+	margin: 0 0 1.5em;
+	overflow: hidden;
+}
+[class*="navigation"] .nav-previous {
+	float: left;
+}
+[class*="navigation"] .nav-next {
+	float: right;
+	text-align: right;
+}
+.navbar.navbar-default {
+  background-color: #54397E;
+  font-weight: 200;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #fff;
+  border-right: 1px solid rgba(0,0,0,.2);
+	box-shadow: 1px 0 0 rgba(255, 255, 255, 0.10);
+}
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
+	border-right: 1px solid rgba(0,0,0,.2);
+	border-left: none;
+}
+.navbar {
+	border-radius: 0;
+}
+.navbar-default {
+	border: none;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus,
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus,
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus,
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus,
+.navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
+.navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.navbar-default .navbar-nav .open .dropdown-menu > li > a {
+	color: #fff;
+}
+.nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
+	border-left: 1px solid rgba(0, 0, 0, 0.1);
+}
+.dropdown-menu > li > a {
+	padding: 18px 20px;
+	color: #fff;
+}
+.dropdown-menu,
+.dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus {
+	background-color: #54397E;
+	border: none;
+}
+.dropdown-menu .divider {
+	background-color: rgba(0, 0, 0, 0.1);
+}
+.dropdown-menu .glyphicon {
+    margin-right: 10px;
+    font-size: 16px;
+}
+.navbar-nav > li > .dropdown-menu {
+	padding: 0;
+}
+.navbar-nav > li > a {
+	padding-top: 18px;
+	padding-bottom: 18px;
+}
+
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+  background-color: transparent;
+}
+.navbar-logo {
+    margin-top: 5px;
+}
+.navbar-default .navbar-brand {
+    color: white;
+}
+.navbar-default .navbar-brand:hover {
+    color: white;
+}
+
+/* ----- Navigation */
+
+
+/* User list ----- */
+
+.user-header {
+    margin-bottom: 15px;
+}
+
+.user-list {
+    padding: 20px;
+}
+
+/* ----- User list */
+
+
+/* Task list ----- */
+
+.box-action:hover, .box-action:focus {
+    text-decoration: none;
+}
+
+.box-action .inner {
+    position: relative;
+    padding-top: 116px;
+    border-radius: 4px;
+}
+
+.box-action .inner-orange {
+    background: #F39C12;
+}
+
+.box-action .inner-pink {
+    background: #F56954;
+}
+
+.box-action .inner-purple {
+    background: #85144B;
+}
+
+.box-action .inner .background {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 80px;
+}
+
+.box-action .inner .background-orange {
+    color: #DA8C10;
+}
+
+.box-action .inner .background-pink {
+    color: #DC5E4B;
+}
+
+.box-action .inner .background-purple {
+    color: #771243;
+}
+
+.box-action .inner .stat {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    color: white;
+}
+
+.box-action .inner .stat .number {
+    font-size: 45px;
+}
+
+.box-action .inner .stat .context {
+    font-size: 15px;
+}
+
+.box-action .text {
+    color: white;
+    padding: 5px;
+    font-size: 15px;
+    text-align: center;
+}
+
+.box-action .text-orange {
+    background: #DA8C10;
+}
+
+.box-action .text-pink {
+    background: #DC5E4B;
+}
+
+.box-action .text-purple {
+    background: #771243;
+}
+
+.box-action .text .glyphicon {
+    margin-left: 8px;
+    vertical-align: middle;
+}
+
+.ui-widget, .ui-widget input, .ui-widget select, .ui-widget textarea, .ui-widget button {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.ui-widget {
+    color: #212529;
+}
+
+.slide-image {
+    width: 100%;
+}
+
+.carousel-holder {
+    margin-bottom: 30px;
+}
+
+.carousel-control,
+.item {
+    border-radius: 4px;
+}
+
+.task-header {
+    height: 50px;
+}
+
+.task-header .filter a {
+    margin: 0 8px 0 8px;
+}
+
+.task-header .filter .selected {
+    text-decoration: underline;
+    color: #343a40;
+}
+
+.caption {
+    /*height: 130px;*/
+    overflow: hidden;
+}
+
+.caption h4 {
+    white-space: nowrap;
+}
+
+.thumbnail img {
+    width: 100%;
+}
+
+.ratings {
+    padding-right: 10px;
+    padding-left: 10px;
+    color: #d17581;
+}
+
+.thumbnail {
+    padding: 0;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: .25rem;
+}
+
+.ui-widget.ui-widget-content {
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: .25rem;
+}
+
+.thumbnail .caption, .thumbnail .caption-full {
+    padding: 0;
+    color: #333;
+    position: relative;
+}
+
+.thumbnail h4 {
+    margin: 0;
+}
+
+.ui-widget-header {
+    border: 0;
+}
+
+.thumbnail .is-done {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    padding-top: 5px;
+    border-radius: 15px;
+    color: white;
+    text-align: center;
+    font-size: 15px;
+}
+
+.thumbnail .green {
+    background-color: #398439;
+    border: 1px solid #255625;
+}
+
+.thumbnail .dark {
+    background-color: #343a40;
+    border: 1px solid #343a40;
+}
+
+.portlet-header {
+    background: transparent;
+    text-align: center;
+    padding: 35px 9px 0 9px;
+}
+
+.thumbnail .date {
+    color: #C0C0C0;
+    margin: 0;
+}
+
+.thumbnail .author {
+    color: #C0C0C0;
+}
+
+.thumbnail .inner {
+    padding: 15px;
+    text-align: center;
+}
+
+.portlet-content {
+    padding: 0;
+}
+
+.thumbnail .content {
+    height: 90px;
+    overflow: hidden;
+}
+
+.thumbnail .footer {
+    background: rgba(0,0,0,.03);
+    border-top: 1px solid rgba(0,0,0,.125);
+    padding: 10px;
+    text-align: center;
+}
+
+.thumbnail .footer form {
+    display: inline-block;
+}
+
+.thumbnail .btn {
+    margin: 0 4px 0 4px;
+}
+
+.thumbnail .btn-success {
+    background-color: #398439;
+    border: 1px solid #255625;
+}
+
+.thumbnail .btn-dark {
+    background-color: #343a40;
+    border: 1px solid #343a40;
+    color: white;
+}
+
+/* ----- Task list */
+
+
+/* Footer ----- */
+
+footer {
+    margin: 50px 0;
+}
+
+/* ----- Footer */

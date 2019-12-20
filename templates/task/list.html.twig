@@ -1,0 +1,76 @@
+{% extends 'base.html.twig' %}
+
+{% block header_title %}
+    <div class="header-title align-left">
+        <h1>Tâches</h1>
+        <h2>Consulter et gérer la liste des tâches</h2>
+    </div>
+{% endblock %}
+
+{% block header_img %}<img class="slide-image" src="{{ asset('img/todolist_content.jpg') }}" alt="todo list">{% endblock %}
+
+{% block body %}
+   
+
+    <div class="task-header">
+        <a href="{{ path('task_create') }}" class="btn btn-info pull-right">Créer une tâche</a>
+        <div class="filter">
+            <a href="{{ path('task_list') }}"{% if app.request.get('filter') == null %} class="selected"{% endif %}>Toutes</a>
+            |
+            <a href="{{ path('task_list', {'filter' : 'to-do'}) }}"{% if app.request.get('filter') == 'to-do' %} class="selected"{% endif %}>À faire</a>
+            |
+            <a href="{{ path('task_list', {'filter' : 'done'}) }}"{% if app.request.get('filter') == 'done' %} class="selected"{% endif %}>Terminées</a>
+        </div>        
+    </div>
+
+    <div class="row">
+
+        <div class="column">
+            {% for task in tasks %}
+                <div class="col-sm-6 col-lg-4 col-md-4">
+                    <div class="thumbnail portlet">
+                        <div class="caption">                            
+                            {% if task.isDone %}
+                                <div class="is-done green"><span class="glyphicon glyphicon-ok"></span></div>
+                            {% else %}
+                                <div class="is-done dark"><span class="glyphicon glyphicon-remove"></span></div>
+                            {% endif %}
+                            <h4 class="portlet-header">
+                                <a class="title" href="{{ path('task_edit', {'id' : task.id }) }}">{{ task.title|striptags|slice(0, 32)|raw }}</a>
+                            </h4>
+                            <div class="inner">
+                                <p class="date">{{ task.createdAt|date("d/m/Y") }}</p>
+                                {% if task.user is not null %}
+                                    <p class="author">Auteur : {{ task.user.username }}</p>
+                                {% else %}
+                                    <p class="author">Auteur : Anonyme</p>
+                                {% endif %}
+                                <p class="portlet-content content">{{ task.content }}</p>
+                            </div>
+                            <div class="footer">
+                                <form action="{{ path('task_toggle', {'id' : task.id }) }}">
+                                    {% if not task.isDone %}
+                                        <button class="btn btn-success btn-sm">Marquer comme faite</button>
+                                    {% else %}
+                                        <button class="btn btn-dark btn-sm">Marquer non terminée</button>
+                                    {% endif %}
+                                    
+                                </form>
+                                {% if task.user is same as (app.user) or (task.user is null and is_granted('ROLE_ADMIN')) %}
+                                    <form action="{{ path('task_delete', {'id' : task.id }) }}">
+                                        <button class="btn btn-danger btn-sm">Supprimer</button>
+                                    </form>
+                                {% endif %}
+                                <br />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% else %}
+                <div class="alert alert-warning" role="alert">
+                    Il n'y a pas encore de tâche enregistrée. <a href="{{ path('task_create') }}" class="btn btn-warning pull-right">Créer une tâche</a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+
+{% block header_title %}
+    <div class="header-title align-center">
+        <h1>ToDo List</h1>
+        <h2>Bienvenue sur Todo List, l'application vous permettant de gérer l'ensemble de vos tâches sans effort !</h2>
+    </div>
+{% endblock %}
+
+{% block header_img %}{% endblock %}
+
+{% block body %}
+
+    {% if error %}
+        <div class="alert alert-danger" role="alert">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+    {% endif %}
+
+    <form method="post" class="login-form">
+
+        <div class="form-group">
+            <label for="inputUsername">Nom d'utilisateur</label>
+            <input type="text" value="{{ last_username }}" name="username" id="inputUsername" class="form-control" required autofocus>
+        </div>
+
+        <div class="form-group">
+            <label for="inputPassword">Mot de passe</label>
+            <input type="password" name="password" id="inputPassword" class="form-control" required>
+        </div>
+
+        <div class="checkbox mb-3">
+            <label>
+                <input type="checkbox" name="_remember_me"> Rester connecté
+            </label>
+        </div>
+
+        <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+
+        <button class="btn btn-lg btn-primary py-3 px-4" type="submit">Se connecter</button>
+
+    </form>
+
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block header_title %}
+    <div class="header-title align-center">
+        <h1>ToDo List</h1>
+        <h2>Bienvenue sur Todo List, l'application vous permettant de gérer l'ensemble de vos tâches sans effort !</h2>
+    </div>
+{% endblock %}
+
+{% block body %}
+
+    <div class="row">
+        <a href="{{ path('task_create') }}" class="col-sm-6 col-lg-4 col-md-4 box-action">
+            <div class="inner inner-orange">
+                <div class="background background-orange"><span class="glyphicon glyphicon-plus-sign"></span></div>
+                <div class="text text-orange">Créer une nouvelle tâche<span class="glyphicon glyphicon-circle-arrow-right"></span></div>
+            </div>
+        </a>
+        <a href="{{ path('task_list', {'filter' : 'to-do'}) }}" class="col-sm-6 col-lg-4 col-md-4 box-action">
+            <div class="inner inner-pink">
+                <div class="background background-pink"><span class="glyphicon glyphicon-remove-circle"></span></div>
+                <div class="stat">
+                    <div class="number">{{ task_to_do }}</div>
+                    <div class="context">tâches à effectuer</div>
+                </div>
+                <div class="text text-pink">Consulter la liste des tâches à effectuer<span class="glyphicon glyphicon-circle-arrow-right"></span></div>
+            </div>
+        </a>
+        <a href="{{ path('task_list', {'filter' : 'done'}) }}" class="col-sm-6 col-lg-4 col-md-4 box-action">
+            <div class="inner inner-purple">
+                <div class="background background-purple"><span class="glyphicon glyphicon-ok-circle"></span></div>
+                <div class="stat">
+                    <div class="number">{{ task_done }}</div>
+                    <div class="context">tâches terminées</div>
+                </div>
+                <div class="text text-purple">Consulter la liste des tâches terminées<span class="glyphicon glyphicon-circle-arrow-right"></span></div>
+            </div>
+        </a>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,86 @@
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+		</div>
+		<div class="collapse navbar-collapse navbar-ex1-collapse">
+			<div class="nav navbar-nav navbar-logo">
+				<a class="navbar-brand" href="{{ path('homepage') }}">To Do List app</a>
+                <img src="{{ asset('img/Logo_OpenClassrooms.png') }}" alt="OpenClassrooms" />
+			</div>
+			<ul id="menu-bootstrap-demo" class="nav navbar-nav navbar-right">
+				<li id="menu-item-1711" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-1699 current_page_item menu-item-1711 active">
+					<a title="Home" href="{{ path('homepage') }}">Accueil</a>
+				</li>
+
+				{% if app.user %}
+					<li id="menu-item-1717" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1717 dropdown">
+						<a title="About" href="#" data-toggle="dropdown" class="dropdown-toggle">Tâches
+							<span class="caret"></span>
+						</a>
+						<ul role="menu" class=" dropdown-menu">
+							<li id="menu-item-1713" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1713">
+								<a title="Tous les tâches" href="{{ path('task_list') }}">
+									<span class="glyphicon glyphicon-th-list"></span>&nbsp;Tous les tâches</a>
+							</li>
+							<li id="menu-item-1713" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1713">
+								<a title="Tâches à effectuer" href="{{ path('task_list', {'filter' : 'to-do'}) }}">
+									<span class="glyphicon glyphicon-remove"></span>&nbsp;Tâches à effectuer</a>
+							</li>
+							<li id="menu-item-1746" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1746">
+								<a title="Tâches terminées" href="{{ path('task_list', {'filter' : 'done'}) }}">
+									<span class="glyphicon glyphicon-ok"></span>&nbsp;Tâches terminées</a>
+							</li>
+							<li id="menu-item-1746" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1746">
+								<a title="Créer une nouvelle tâche" href="{{ path('task_create') }}">
+									<span class="glyphicon glyphicon-plus"></span>&nbsp;Créer une nouvelle tâche</a>
+							</li>
+						</ul>
+					</li>
+				{% endif %}
+
+				{% if is_granted('ROLE_ADMIN') %}
+					<li id="menu-item-1717" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1717 dropdown">
+						<a title="Utilisateurs" href="#" data-toggle="dropdown" class="dropdown-toggle">Utilisateurs
+							<span class="caret"></span>
+						</a>
+						<ul role="menu" class=" dropdown-menu">
+							<li id="menu-item-1713" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1713">
+								<a title="Liste des utilisateurs" href="{{ path('user_list') }}">
+									<span class="glyphicon glyphicon-th-list"></span>&nbsp;Liste des utilisateurs</a>
+							</li>
+							<li id="menu-item-1746" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1746">
+								<a title="Créer un utilisateur" href="{{ path('user_create') }}">
+									<span class="glyphicon glyphicon-user"></span>&nbsp;Créer un utilisateur</a>
+							</li>
+						</ul>
+					</li>
+                {% endif %}
+
+				{% if app.user %}
+					<li id="menu-item-1717" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1717 dropdown">
+						<a title="Utilisateurs" href="#" data-toggle="dropdown" class="dropdown-toggle">{{ app.user.username }}
+							<span class="caret"></span>
+						</a>
+						<ul role="menu" class=" dropdown-menu">
+							<li id="menu-item-1746" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1746">
+								<a title="Déconnexion" href="{{ path('app_logout') }}">
+									<span class="glyphicon glyphicon-log-out"></span>&nbsp;Déconnexion</a>
+							</li>
+						</ul>
+					</li>
+				{% else %}
+					<li id="menu-item-1973" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1973">
+						<a title="Se connecter" href="{{ path('app_login') }}">Se connecter</a>
+					</li>
+                {% endif %}
+
+			</ul>
+		</ul>
+	</div>
+</nav>

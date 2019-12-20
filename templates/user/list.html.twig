@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block header_title %}
+    <div class="header-title align-left">
+        <h1>Utilisateurs</h1>
+        <h2>Consulter et gérer la liste de tous les utilisateurs</h2>
+    </div>
+{% endblock %}
+
+{% block header_img %}{% endblock %}
+
+{% block body %}
+
+    <div class="user-header">
+        <a href="{{ path('user_create') }}" class="btn btn-info">Créer un utilisateur</a>
+    </div>
+
+    {% if users|length == 0 %}
+        <div class="alert alert-warning" role="alert">
+            Il n'y a pas encore d'utilisateur enregistré.
+        </div>
+    {% else %}
+        <div class="row">
+
+            <div class="user-list">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Nom d'utilisateur</th>
+                        <th>Adresse d'utilisateur</th>
+                        <th>Rôle</th>
+                    <th>Actions</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for user in users %}
+                        <tr>
+                            <th scope="row">{{ loop.index }}</th>
+                            <td>{{ user.username }}</td>
+                            <td>{{ user.email }}</td>
+                            <td>{{ user.roleName }}</td>
+                            <td>
+                                <a href="{{ path('user_edit', {'id' : user.id}) }}" class="btn btn-primary btn-sm">Edit</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    {% endif %}
+{% endblock %}
